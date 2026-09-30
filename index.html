@@ -171,15 +171,9 @@
   footer a { color: var(--muted); text-decoration: none; }
   footer a:hover { color: var(--gold-soft); }
 
-  /* Motion and mobile fallbacks: stills instead of video */
+  /* Motion fallback: stills instead of video for reduced-motion users */
   @media (prefers-reduced-motion: reduce) {
     .hero-video, .reel-video { display: none; }
-  }
-  @media (max-width: 768px) {
-    .hero-video, .reel-video { display: none; }
-    .reel {
-      background: url('assets/video/reel-poster.jpg') center / cover no-repeat;
-    }
   }
 </style>
 </head>
