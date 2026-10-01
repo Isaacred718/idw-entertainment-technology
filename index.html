@@ -232,7 +232,7 @@
   /* Work / case studies (section is commented out until you have write-ups) */
   .cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
   .case { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-  .case img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+  .case img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: var(--focus, 50% 50%); display: block; }
   .case .body { padding: 22px 24px; }
   .case .meta { color: var(--gold); font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
   .case h3 { font-size: 1.1rem; margin-bottom: 8px; }
@@ -469,7 +469,7 @@
     <p class="sectionlede">A few recent productions, and what it took to get them right.</p>
     <div class="cases">
       <article class="case">
-        <img src="assets/work/case-1.jpg" alt="Corporate conference general session with branded stage screen and blue uplighting, viewed from the FOH tech position" loading="lazy" width="1200" height="1600">
+        <img src="assets/work/case-1.jpg" alt="Corporate conference general session with branded stage screen and blue uplighting, viewed from the FOH tech position" loading="lazy" width="1200" height="1600" style="--focus: 50% 48%">
         <div class="body">
           <div class="meta">Corporate conference, general session</div>
           <h3>Flagship session, run from behind the drape</h3>
@@ -477,7 +477,7 @@
         </div>
       </article>
       <article class="case">
-        <img src="assets/work/case-2.jpg" alt="Video village for an investor meeting: switching console, multiview monitors, and playback laptops" loading="lazy" width="1200" height="1600">
+        <img src="assets/work/case-2.jpg" alt="Video village for an investor meeting: switching console, multiview monitors, and playback laptops" loading="lazy" width="1200" height="1600" style="--focus: 50% 62%">
         <div class="body">
           <div class="meta">Investor meeting, video village</div>
           <h3>Every feed in one place</h3>
