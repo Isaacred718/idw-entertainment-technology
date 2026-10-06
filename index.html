@@ -10,7 +10,7 @@
   with your new address (keep the trailing slash).
 -->
 <title>IDW Entertainment Technology | Live and Hybrid Event AV, NYC and NJ</title>
-<meta name="description" content="Live audio, video, and livestream production for corporate events, conferences, and hybrid shows across New York and New Jersey. One engineer for the room and the stream.">
+<meta name="description" content="One engineer for your room and your stream. Live audio, video, and livestream production for corporate events, conferences, and hybrid shows across New York and New Jersey.">
 <link rel="canonical" href="https://isaacred718.github.io/idw-entertainment-technology-preview/">
 <meta name="theme-color" content="#0b0d12">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0d12'/%3E%3Cpath d='M18 46V18h6v28zm12 0V26h6v20zm12 0V12h6v34z' fill='%23d4a017'/%3E%3C/svg%3E">
@@ -18,7 +18,7 @@
 <!-- Link previews (LinkedIn, iMessage, Slack, email) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="IDW Entertainment Technology">
-<meta property="og:title" content="IDW Entertainment Technology | Live and Hybrid Event AV">
+<meta property="og:title" content="IDW Entertainment Technology | Your Event, Handled End to End">
 <meta property="og:description" content="The room and the stream, handled by one engineer. Audio, video, and livestream production across the New York metro.">
 <meta property="og:url" content="https://isaacred718.github.io/idw-entertainment-technology-preview/">
 <meta property="og:image" content="https://isaacred718.github.io/idw-entertainment-technology-preview/assets/og-image.jpg">
@@ -81,7 +81,7 @@
   /* Nav */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-    background: rgba(11, 13, 18, 0.85);
+    background: rgba(11, 13, 18, 0.88);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
   }
@@ -110,7 +110,7 @@
     background:
       linear-gradient(180deg, rgba(11,13,18,0.55) 0%, rgba(11,13,18,0.82) 70%, var(--bg) 100%),
       url('assets/canon-stage.jpg') center / cover no-repeat;
-    padding: 120px 0 80px;
+    padding: 120px 0 90px;
   }
   .hero-video {
     position: absolute; inset: 0;
@@ -127,14 +127,15 @@
     font-weight: 700; margin-bottom: 18px;
   }
   .hero h1 {
-    font-size: clamp(2.4rem, 6vw, 4.2rem);
-    line-height: 1.08; font-weight: 800; letter-spacing: -0.01em;
-    margin-bottom: 20px; max-width: 18ch;
+    font-size: clamp(2.5rem, 6.4vw, 4.4rem);
+    line-height: 1.06; font-weight: 800; letter-spacing: -0.015em;
+    margin-bottom: 20px; max-width: 19ch;
   }
-  .hero p.lede { color: #c9d1dd; font-size: 1.08rem; max-width: 600px; margin-bottom: 32px; }
-  .btnrow { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero h1 .gold { color: var(--gold-soft); }
+  .hero p.lede { color: #c9d1dd; font-size: 1.1rem; max-width: 620px; margin-bottom: 34px; }
+  .btnrow { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
   .btn {
-    display: inline-block; padding: 14px 30px; border-radius: 8px;
+    display: inline-block; padding: 15px 32px; border-radius: 8px;
     font-weight: 700; text-decoration: none; font-size: 1rem;
     border: 0; font-family: inherit; cursor: pointer;
   }
@@ -142,14 +143,29 @@
   .btn.primary:hover { background: var(--gold-soft); }
   .btn.ghost { border: 1px solid var(--border); color: var(--text); background: rgba(21,25,34,0.7); }
   .btn.ghost:hover { border-color: var(--gold); color: var(--gold-soft); }
+  .hero-proof {
+    margin-top: 26px; color: var(--muted); font-size: 0.92rem;
+    display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  }
+  .hero-proof strong { color: var(--gold-soft); font-weight: 700; }
+
+  /* Trust strip */
+  .trust { border-bottom: 1px solid var(--border); background: var(--bg2); }
+  .trust .wrap {
+    display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    padding-top: 26px; padding-bottom: 26px;
+  }
+  .trust .t b { display: block; font-size: 1.6rem; color: var(--gold); letter-spacing: -0.01em; }
+  .trust .t span { color: var(--muted); font-size: 0.88rem; }
 
   /* Sections */
-  section { padding: 84px 0; }
+  section { padding: 88px 0; }
   section.alt { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .kicker { color: var(--gold); letter-spacing: 0.24em; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px; }
   h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); line-height: 1.2; font-weight: 800; margin-bottom: 14px; letter-spacing: -0.01em; }
   h3, h4 { line-height: 1.3; }
   .sectionlede { color: var(--muted); max-width: 680px; margin-bottom: 40px; font-size: 1.05rem; }
+  .sectioncta { margin-top: 36px; }
 
   /* Hybrid feature: the one thing IDW does that most crews don't */
   .feature {
@@ -194,6 +210,36 @@
     border-radius: 999px; padding: 8px 18px; font-size: 0.9rem;
   }
 
+  /* Work / case studies */
+  .cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+  .case { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
+  .case:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .case img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: var(--focus, 50% 50%); display: block; }
+  .case .body { padding: 22px 24px; }
+  .case .meta { color: var(--gold); font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+  .case h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .case p { color: var(--muted); font-size: 0.95rem; }
+
+  /* Reel: cinematic live-footage band */
+  .reel {
+    position: relative;
+    overflow: hidden;
+    padding: 110px 0;
+    text-align: center;
+  }
+  .reel-video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .reel-shade {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, var(--bg) 0%, rgba(11,13,18,0.35) 28%, rgba(11,13,18,0.6) 62%, var(--bg) 100%);
+  }
+  .reel .wrap { position: relative; z-index: 1; }
+  .reel h2 { margin-bottom: 0; }
+  .reel-sub { color: #c9d1dd; max-width: 640px; margin: 16px auto 0; font-size: 1.05rem; }
+
   /* Process: a real sequence, so it is numbered */
   .steps { list-style: none; display: grid; grid-template-columns: 1fr; gap: 0; counter-reset: step; }
   @media (min-width: 860px) { .steps { grid-template-columns: repeat(4, 1fr); } }
@@ -224,53 +270,19 @@
   @media (min-width: 860px) { .about { grid-template-columns: 1.2fr 0.8fr; align-items: center; } }
   .about p { color: #c9d1dd; margin-bottom: 16px; }
   .about p strong { color: var(--text); }
-  .statrow { display: flex; gap: 36px; margin-top: 24px; flex-wrap: wrap; }
-  .stat b { display: block; font-size: 1.9rem; color: var(--gold); }
-  .stat span { color: var(--muted); font-size: 0.88rem; }
   .about img { width: 100%; border-radius: 12px; border: 1px solid var(--border); }
 
-  /* Work / case studies (section is commented out until you have write-ups) */
-  .cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
-  .case { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-  .case img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: var(--focus, 50% 50%); display: block; }
-  .case .body { padding: 22px 24px; }
-  .case .meta { color: var(--gold); font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
-  .case h3 { font-size: 1.1rem; margin-bottom: 8px; }
-  .case p { color: var(--muted); font-size: 0.95rem; }
-  blockquote {
-    margin-top: 28px; border-left: 3px solid var(--gold); padding: 6px 0 6px 20px;
-    color: #dfe5ee; font-size: 1.1rem; max-width: 720px;
-  }
-  blockquote cite { display: block; margin-top: 8px; color: var(--muted); font-size: 0.9rem; font-style: normal; }
-
-  /* Reel: cinematic live-footage band */
-  .reel {
-    position: relative;
-    overflow: hidden;
-    padding: 120px 0;
-    text-align: center;
-  }
-  .reel-video {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-  }
-  .reel-shade {
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, var(--bg) 0%, rgba(11,13,18,0.35) 28%, rgba(11,13,18,0.6) 62%, var(--bg) 100%);
-  }
-  .reel .wrap { position: relative; z-index: 1; }
-  .reel h2 { margin-bottom: 0; }
-  .reel-sub { color: #c9d1dd; max-width: 640px; margin: 16px auto 0; font-size: 1.05rem; }
-
-  /* Contact */
+  /* Quote: the conversion point */
+  #contact { border-top: 2px solid var(--gold); }
   .contact { display: grid; grid-template-columns: 1fr; gap: 36px; }
   @media (min-width: 860px) { .contact { grid-template-columns: 0.9fr 1.1fr; align-items: start; } }
   .contact-intro p { color: var(--muted); margin-bottom: 24px; max-width: 440px; }
+  .contact-intro .promise { color: #c9d1dd; font-size: 0.95rem; margin-bottom: 24px; max-width: 440px; }
+  .contact-intro .promise strong { color: var(--gold-soft); }
   .contactlinks { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
   .area { color: var(--muted); font-size: 0.9rem; }
   form.quote {
-    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    background: var(--card); border: 1px solid var(--gold); border-radius: 14px;
     padding: 28px 24px; display: grid; gap: 16px;
   }
   .row2 { display: grid; grid-template-columns: 1fr; gap: 16px; }
@@ -310,8 +322,8 @@
     <a class="brand" href="#top">IDW <span>ENTERTAINMENT TECHNOLOGY</span></a>
     <div class="navlinks">
       <a href="#services">Services</a>
-      <a href="#process">How it works</a>
       <a href="#work">Work</a>
+      <a href="#process">How it works</a>
       <a href="#about">About</a>
       <a class="navcta" href="#contact">Get a quote</a>
     </div>
@@ -325,26 +337,42 @@
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="wrap">
     <div class="eyebrow">LIVE AND HYBRID EVENT AV, NYC METRO</div>
-    <h1>The room and the stream, handled by one engineer.</h1>
-    <p class="lede">IDW Entertainment Technology provides audio, video, and livestream production for corporate events, conferences, and live shows across New York and New Jersey. The mix in the room and the feed online come from one plan and one point of contact.</p>
+    <h1>Your event, <span class="gold">handled end to end.</span></h1>
+    <p class="lede">IDW Entertainment Technology runs audio, video, and livestreams for corporate events, conferences, and live shows across New York and New Jersey. One engineer, one plan, one point of contact, from the first call to the final file.</p>
     <div class="btnrow">
-      <a class="btn primary" href="#contact">Request a quote</a>
+      <a class="btn primary" href="#contact">Get a quote</a>
       <a class="btn ghost" href="tel:+13477947663">Call (347) 794-7663</a>
+    </div>
+    <div class="hero-proof">
+      <strong>12+ years</strong> in live production
+      <span aria-hidden="true">&middot;</span>
+      <strong>100s of events</strong> supported
+      <span aria-hidden="true">&middot;</span>
+      <strong>1</strong> point of contact
     </div>
   </div>
 </header>
+
+<div class="trust" aria-label="Why book IDW">
+  <div class="wrap">
+    <div class="t"><b>12+</b><span>years in live production</span></div>
+    <div class="t"><b>100s</b><span>of events across the NYC metro</span></div>
+    <div class="t"><b>1</b><span>engineer from planning to strike</span></div>
+    <div class="t"><b>2</b><span>audiences covered: room and stream</span></div>
+  </div>
+</div>
 
 <main id="main">
 
 <section id="services">
   <div class="wrap">
     <div class="kicker">SERVICES</div>
-    <h2>Production services, done right</h2>
-    <p class="sectionlede">One call covers your audio, video, crew, and show flow. Every engagement gets documented systems, clean RF, reliable networks, and calm execution under pressure.</p>
+    <h2>Everything your show needs, one call</h2>
+    <p class="sectionlede">Audio, video, crew, and show flow, documented and executed calmly under pressure. Tell us the date and the venue. We handle the rest.</p>
 
     <div class="feature">
-      <h3>Hybrid and livestream production</h3>
-      <p>Many event crews treat the stream as an add-on. IDW plans it from the first call, using the broadcast workflows Isaac works with every day in a broadcast facility, so remote viewers get a real show rather than a webcam pointed at a stage.</p>
+      <h3>Hybrid and livestream, planned from day one</h3>
+      <p>Most crews treat the stream as an add-on. IDW plans it from the first call, using the broadcast workflows Isaac runs every day in a broadcast facility. Remote viewers get a real show, not a webcam pointed at a stage.</p>
       <div class="split">
         <div>
           <h4>In the room</h4>
@@ -411,53 +439,8 @@
         <span class="chip">AV companies needing an A1 or V1</span>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="process" class="alt">
-  <div class="wrap">
-    <div class="kicker">HOW IT WORKS</div>
-    <h2>From first call to final file</h2>
-    <p class="sectionlede">No surprises for you or the venue. Here is what booking IDW looks like.</p>
-    <ol class="steps">
-      <li>
-        <h3>Send the details</h3>
-        <p>Date, venue, headcount, and whether it will be streamed. You get availability and a straightforward quote.</p>
-      </li>
-      <li>
-        <h3>Plan the show</h3>
-        <p>A call to walk the run of show, then a documented signal flow, RF plan, and stream plan before load in.</p>
-      </li>
-      <li>
-        <h3>Show day</h3>
-        <p>On site from load in, behind the console, with one person to call if anything changes.</p>
-      </li>
-      <li>
-        <h3>Wrap</h3>
-        <p>Clean strike, plus recordings and stream files handed off so you can share the event afterward.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap">
-    <div class="kicker">ABOUT</div>
-    <h2>Led by an engineer, not a sales team</h2>
-    <div class="about">
-      <div>
-        <p><strong>IDW Entertainment Technology</strong> is led by Isaac Walton, an AV engineer with more than a decade in live event production across the New York metro area.</p>
-        <p>From corporate conferences to houses of worship to broadcast integrated shows, Isaac has run audio, video, and crews in rooms where there are no second takes. Day to day he works in a broadcast facility, which is why IDW's streamed events are built like broadcasts rather than video calls.</p>
-        <p>When you book IDW, you get the person answering the phone on site, behind the console, making sure it goes right.</p>
-        <div class="statrow">
-          <div class="stat"><b>12+</b><span>years live production</span></div>
-          <div class="stat"><b>100s</b><span>of events supported</span></div>
-          <div class="stat"><b>1</b><span>point of contact</span></div>
-        </div>
-      </div>
-      <div>
-        <img src="assets/canon-stage.jpg" alt="Corporate event stage with red lit truss" loading="lazy" width="1200" height="322">
-      </div>
+    <div class="sectioncta">
+      <a class="btn primary" href="#contact">Check availability for your date</a>
     </div>
   </div>
 </section>
@@ -465,7 +448,7 @@
 <section id="work" class="alt">
   <div class="wrap">
     <div class="kicker">RECENT WORK</div>
-    <h2>Shows we've run</h2>
+    <h2>Proof, not promises</h2>
     <p class="sectionlede">A few recent productions, and what it took to get them right.</p>
     <div class="cases">
       <article class="case">
@@ -493,6 +476,9 @@
         </div>
       </article>
     </div>
+    <div class="sectioncta">
+      <a class="btn ghost" href="#contact">Get this level of production for your event</a>
+    </div>
   </div>
 </section>
 
@@ -507,13 +493,60 @@
   </div>
 </section>
 
+<section id="process" class="alt">
+  <div class="wrap">
+    <div class="kicker">HOW IT WORKS</div>
+    <h2>Booked in four steps</h2>
+    <p class="sectionlede">No surprises for you or the venue. Here is what booking IDW looks like.</p>
+    <ol class="steps">
+      <li>
+        <h3>Send the details</h3>
+        <p>Date, venue, headcount, and whether it will be streamed. You get availability and a straightforward quote.</p>
+      </li>
+      <li>
+        <h3>Plan the show</h3>
+        <p>A call to walk the run of show, then a documented signal flow, RF plan, and stream plan before load in.</p>
+      </li>
+      <li>
+        <h3>Show day</h3>
+        <p>On site from load in, behind the console, with one person to call if anything changes.</p>
+      </li>
+      <li>
+        <h3>Wrap</h3>
+        <p>Clean strike, plus recordings and stream files handed off so you can share the event afterward.</p>
+      </li>
+    </ol>
+    <div class="sectioncta">
+      <a class="btn primary" href="#contact">Start with step one</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="kicker">ABOUT</div>
+    <h2>Led by an engineer, not a sales team</h2>
+    <div class="about">
+      <div>
+        <p><strong>IDW Entertainment Technology</strong> is led by Isaac Walton, an AV engineer with more than a decade in live event production across the New York metro area.</p>
+        <p>From corporate conferences to houses of worship to broadcast integrated shows, Isaac has run audio, video, and crews in rooms where there are no second takes. Day to day he works in a broadcast facility, which is why IDW's streamed events are built like broadcasts rather than video calls.</p>
+        <p>When you book IDW, the person answering the phone is the person on site, behind the console, making sure it goes right.</p>
+      </div>
+      <div>
+        <img src="assets/canon-stage.jpg" alt="Corporate event stage with red lit truss" loading="lazy" width="1200" height="322">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="alt">
   <div class="wrap">
     <div class="contact">
       <div class="contact-intro">
-        <div class="kicker">CONTACT</div>
-        <h2>Let's talk about your event</h2>
-        <p>Tell us the date, the venue, and what you need covered. We will respond quickly with availability and a straightforward quote. Prefer to talk it through? Call any time.</p>
+        <div class="kicker">GET A QUOTE</div>
+        <h2>Lock in your date</h2>
+        <p>Tell us the date, the venue, and what you need covered. You get a fast answer on availability and a straightforward quote.</p>
+        <p class="promise"><strong>No pushy sales calls.</strong> One engineer reads your inquiry and replies with a straight answer.</p>
         <div class="contactlinks">
           <a class="btn ghost" href="tel:+13477947663">Call (347) 794-7663</a>
           <a class="btn ghost" href="https://www.linkedin.com/in/isaacwalton718" target="_blank" rel="noopener">LinkedIn</a>
@@ -521,7 +554,6 @@
         <div class="area">Serving New York and New Jersey. Based in Bayonne, NJ.</div>
       </div>
 
-      <!-- Formspree: create a free form at formspree.io, then replace YOUR_FORM_ID below -->
       <form class="quote" action="https://formspree.io/f/xjykzzlw" method="POST">
         <input type="hidden" name="_subject" value="New event inquiry from idw website">
         <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -575,8 +607,8 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 IDW Entertainment Technology, LLC. All rights reserved.</span>
-    <span><a href="https://www.linkedin.com/in/isaacwalton718" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span>&copy; 2026 IDW Entertainment Technology, LLC. All rights reserved.</span>
+    <span><a href="tel:+13477947663">(347) 794-7663</a> &middot; <a href="https://www.linkedin.com/in/isaacwalton718" target="_blank" rel="noopener">LinkedIn</a></span>
   </div>
 </footer>
 
