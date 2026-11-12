@@ -299,6 +299,42 @@
     .hero-video, .reel-video { display: none; }
     html { scroll-behavior: auto; }
   }
+
+  /* ---- Phone navigation and touch polish (v2) ----
+     Phones used to hide every section link. They now get a swipeable chip
+     row under the bar and a bottom action bar with Call and Get a quote. */
+  .btn { min-height: 52px; display: inline-flex; align-items: center; justify-content: center; transition: transform .06s ease, box-shadow .06s ease, background .15s; }
+  .btn.primary { box-shadow: 0 4px 0 #9a7410; }
+  .btn.primary:active { transform: translateY(4px); box-shadow: none; }
+  .navchips, .actionbar { display: none; }
+  @media (max-width: 640px) {
+    html { scroll-padding-top: 122px; }
+    .navcta { display: none; }
+    .navchips {
+      display: flex; flex-wrap: nowrap; gap: 8px; overflow-x: auto; padding: 0 16px 10px; scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 24px), transparent);
+      mask-image: linear-gradient(90deg, #000 calc(100% - 24px), transparent);
+    }
+    .navchips::-webkit-scrollbar { display: none; }
+    .navchips a {
+      flex: 0 0 auto; min-height: 40px; display: inline-flex; align-items: center; padding: 0 16px;
+      border: 1px solid var(--border); border-radius: 999px; background: rgba(255,255,255,0.04);
+      color: var(--text); text-decoration: none; font-size: 0.88rem; font-weight: 600; white-space: nowrap;
+    }
+    .navchips a.on { border-color: var(--gold); color: var(--gold-soft); background: rgba(212,160,23,0.12); }
+    .actionbar {
+      display: flex; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(11,13,18,0.94); border-top: 1px solid var(--border);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    }
+    .actionbar .btn { flex: 1; margin: 0; min-height: 50px; padding: 0 10px; font-size: 0.98rem; }
+    body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+  }
+  /* Quest panel: controller rays need a visible hover target */
+  html.quest a.btn:hover, html.quest .navlinks a:hover, html.quest button:hover { outline: 3px solid var(--gold-soft); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
 </style>
 </head>
 <body>
@@ -315,6 +351,13 @@
       <a href="#about">About</a>
       <a class="navcta" href="#contact">Get a quote</a>
     </div>
+  </div>
+  <div class="navchips" aria-label="Sections">
+    <a href="#services">Services</a>
+    <a href="#process">How it works</a>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
@@ -580,6 +623,11 @@
   </div>
 </footer>
 
+<div class="actionbar" aria-label="Quick actions">
+  <a class="btn ghost" href="tel:+13477947663">Call</a>
+  <a class="btn primary" href="#contact">Get a quote</a>
+</div>
+
 <script>
 (function () {
   var saveData = navigator.connection && navigator.connection.saveData;
@@ -605,6 +653,22 @@
   } else if (reel) {
     reel.src = reel.dataset.src;
     reel.autoplay = true;
+  }
+
+  // Phone chip row: highlight the section in view.
+  var chips = document.querySelectorAll('.navchips a');
+  if (chips.length && 'IntersectionObserver' in window) {
+    var byId = {};
+    chips.forEach(function (c) { byId[c.getAttribute('href').slice(1)] = c; });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        chips.forEach(function (c) { c.classList.remove('on'); });
+        var c = byId[e.target.id];
+        if (c) { c.classList.add('on'); if (c.scrollIntoView && getComputedStyle(c.parentNode).display !== 'none') c.parentNode.scrollTo({ left: c.offsetLeft - 16, behavior: 'smooth' }); }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    Object.keys(byId).forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
   }
 
   // Send the inquiry without leaving the page.
