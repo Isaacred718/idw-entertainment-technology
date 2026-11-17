@@ -12,8 +12,12 @@
 <title>IDW Entertainment Technology | Live and Hybrid Event AV, NYC and NJ</title>
 <meta name="description" content="Live audio, video, and livestream production for corporate events, conferences, and hybrid shows across New York and New Jersey. One engineer for the room and the stream.">
 <link rel="canonical" href="https://idwent.com/">
-<meta name="theme-color" content="#0b0d12">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0d12'/%3E%3Cpath d='M18 46V18h6v28zm12 0V26h6v20zm12 0V12h6v34z' fill='%23d4a017'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0a'/%3E%3Cpath d='M18 46V18h6v28zm12 0V26h6v20zm12 0V12h6v34z' fill='%23d4af37'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
 
 <!-- Link previews (LinkedIn, iMessage, Slack, email) -->
 <meta property="og:type" content="website">
@@ -50,14 +54,16 @@
 
 <style>
   :root {
-    --bg: #0b0d12;
-    --bg2: #11141b;
-    --card: #151922;
-    --border: #262c38;
-    --text: #eceff4;
-    --muted: #9aa3b2;
-    --gold: #d4a017;
-    --gold-soft: #f0c94a;
+    --bg: #0a0a0a;
+    --bg2: #101010;
+    --card: #141414;
+    --border: #262626;
+    --text: #f4f1ea;
+    --muted: #a49d8f;
+    --gold: #d4af37;
+    --gold-soft: #e9cf7a;
+    --font-head: "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-mono: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; scroll-padding-top: 72px; }
@@ -69,6 +75,8 @@
     -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; }
+  h1, h2, h3, h4, .brand, .btn { font-family: var(--font-head); }
+  ::selection { background: var(--gold); color: #141414; }
   :focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 3px; border-radius: 4px; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
   .skip {
@@ -81,7 +89,7 @@
   /* Nav */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-    background: rgba(11, 13, 18, 0.85);
+    background: rgba(10, 10, 10, 0.88);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
   }
@@ -99,6 +107,8 @@
   @media (max-width: 640px) {
     .navlinks a:not(.navcta) { display: none; }
     .brand span { display: none; }
+    .statrow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .stat b { font-size: 1.45rem; }
   }
 
   /* Hero */
@@ -108,7 +118,7 @@
     min-height: 100vh;
     display: flex; align-items: center;
     background:
-      linear-gradient(180deg, rgba(11,13,18,0.55) 0%, rgba(11,13,18,0.82) 70%, var(--bg) 100%),
+      linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.82) 70%, var(--bg) 100%),
       url('assets/canon-stage.jpg') center / cover no-repeat;
     padding: 120px 0 80px;
   }
@@ -119,20 +129,27 @@
   }
   .hero-shade {
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(11,13,18,0.55) 0%, rgba(11,13,18,0.82) 70%, var(--bg) 100%);
+    background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.82) 70%, var(--bg) 100%);
   }
   header.hero .wrap { position: relative; z-index: 1; width: 100%; }
   .eyebrow {
-    color: var(--gold); letter-spacing: 0.28em; font-size: 0.75rem;
-    font-weight: 700; margin-bottom: 18px;
+    font-family: var(--font-mono);
+    color: var(--gold); letter-spacing: 0.22em; font-size: 0.78rem;
+    margin-bottom: 18px;
   }
   .hero h1 {
     font-size: clamp(2.4rem, 6vw, 4.2rem);
     line-height: 1.08; font-weight: 800; letter-spacing: -0.01em;
     margin-bottom: 20px; max-width: 18ch;
   }
-  .hero p.lede { color: #c9d1dd; font-size: 1.08rem; max-width: 600px; margin-bottom: 32px; }
+  .hero p.lede { color: #d8d2c2; font-size: 1.08rem; max-width: 600px; margin-bottom: 32px; }
   .btnrow { display: flex; gap: 14px; flex-wrap: wrap; }
+  .creds {
+    margin-top: 36px; font-family: var(--font-mono); font-size: 0.78rem;
+    letter-spacing: 0.16em; color: #b7b0a0;
+  }
+  .creds b { color: var(--gold); font-weight: 400; padding: 0 6px; }
+  .creds span { white-space: nowrap; }
   .btn {
     display: inline-block; padding: 14px 30px; border-radius: 8px;
     font-weight: 700; text-decoration: none; font-size: 1rem;
@@ -140,13 +157,13 @@
   }
   .btn.primary { background: var(--gold); color: #141414; }
   .btn.primary:hover { background: var(--gold-soft); }
-  .btn.ghost { border: 1px solid var(--border); color: var(--text); background: rgba(21,25,34,0.7); }
+  .btn.ghost { border: 1px solid var(--border); color: var(--text); background: rgba(20,20,20,0.7); }
   .btn.ghost:hover { border-color: var(--gold); color: var(--gold-soft); }
 
   /* Sections */
   section { padding: 84px 0; }
   section.alt { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .kicker { color: var(--gold); letter-spacing: 0.24em; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px; }
+  .kicker { font-family: var(--font-mono); color: var(--gold); letter-spacing: 0.22em; font-size: 0.78rem; margin-bottom: 12px; }
   h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); line-height: 1.2; font-weight: 800; margin-bottom: 14px; letter-spacing: -0.01em; }
   h3, h4 { line-height: 1.3; }
   .sectionlede { color: var(--muted); max-width: 680px; margin-bottom: 40px; font-size: 1.05rem; }
@@ -155,21 +172,21 @@
   .feature {
     border: 1px solid var(--gold);
     border-radius: 14px;
-    background: linear-gradient(180deg, rgba(212,160,23,0.07), rgba(21,25,34,0.9) 40%);
+    background: linear-gradient(180deg, rgba(212,175,55,0.07), rgba(20,20,20,0.9) 40%);
     padding: 36px 32px;
     margin-bottom: 18px;
   }
   @media (max-width: 560px) { .feature { padding: 26px 18px; } .split > div { padding: 18px; } }
   .feature h3 { font-size: 1.5rem; margin-bottom: 10px; }
-  .feature > p { color: #c9d1dd; max-width: 640px; margin-bottom: 28px; }
+  .feature > p { color: #d8d2c2; max-width: 640px; margin-bottom: 28px; }
   .split { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
   @media (min-width: 760px) { .split { grid-template-columns: 1fr 1fr; } }
-  .split > div { padding: 22px 24px; background: rgba(11,13,18,0.55); }
+  .split > div { padding: 22px 24px; background: rgba(10,10,10,0.55); }
   .split > div + div { border-top: 1px solid var(--border); }
   @media (min-width: 760px) { .split > div + div { border-top: 0; border-left: 1px solid var(--border); } }
   .split h4 { color: var(--gold-soft); font-size: 1rem; margin-bottom: 10px; }
   .split ul { list-style: none; }
-  .split li { color: #c9d1dd; font-size: 0.95rem; padding: 6px 0 6px 18px; position: relative; }
+  .split li { color: #d8d2c2; font-size: 0.95rem; padding: 6px 0 6px 18px; position: relative; }
   .split li::before {
     content: ""; position: absolute; left: 0; top: 0.95em;
     width: 8px; height: 2px; background: var(--gold);
@@ -181,16 +198,18 @@
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
   .card {
     background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    padding: 28px 24px; transition: border-color 0.2s, transform 0.2s;
+    padding: 28px 24px; transition: border-color 0.25s;
+    border-top: 2px solid var(--border);
   }
-  .card:hover { border-color: var(--gold); transform: translateY(-3px); }
-  .card .icon { font-size: 1.7rem; margin-bottom: 12px; }
+  .card:hover { border-color: #3a3a3a; border-top-color: var(--gold); }
+  .card .icon { margin-bottom: 14px; color: var(--gold); }
+  .card .icon svg { display: block; width: 30px; height: 30px; }
   .card h3 { font-size: 1.12rem; margin-bottom: 8px; color: var(--gold-soft); }
   .card p { color: var(--muted); font-size: 0.95rem; }
   .serve { margin-top: 44px; }
   .chips { display: flex; flex-wrap: wrap; gap: 10px; }
   .chip {
-    border: 1px solid var(--border); background: var(--card); color: #c9d1dd;
+    border: 1px solid var(--border); background: var(--card); color: #d8d2c2;
     border-radius: 999px; padding: 8px 18px; font-size: 0.9rem;
   }
 
@@ -206,7 +225,7 @@
     position: absolute; left: 0; top: 0;
     width: 34px; height: 34px; border-radius: 50%;
     border: 1px solid var(--gold); color: var(--gold-soft);
-    display: grid; place-items: center; font-weight: 700; font-size: 0.95rem;
+    display: grid; place-items: center; font-family: var(--font-mono); font-size: 0.9rem;
   }
   @media (min-width: 860px) {
     .steps li { padding: 52px 24px 0 0; }
@@ -222,24 +241,24 @@
   /* About */
   .about { display: grid; grid-template-columns: 1fr; gap: 32px; }
   @media (min-width: 860px) { .about { grid-template-columns: 1.2fr 0.8fr; align-items: center; } }
-  .about p { color: #c9d1dd; margin-bottom: 16px; }
+  .about p { color: #d8d2c2; margin-bottom: 16px; }
   .about p strong { color: var(--text); }
   .statrow { display: flex; gap: 36px; margin-top: 24px; flex-wrap: wrap; }
-  .stat b { display: block; font-size: 1.9rem; color: var(--gold); }
+  .stat b { display: block; font-family: var(--font-head); font-size: 1.9rem; color: var(--gold); }
   .stat span { color: var(--muted); font-size: 0.88rem; }
-  .about img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 72% 50%; display: block; border-radius: 12px; border: 1px solid var(--border); }
+  .about img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 72% 50%; display: block; border-radius: 12px; border: 1px solid var(--border); }
 
   /* Work / case studies (section is commented out until you have write-ups) */
   .cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
   .case { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
   .case img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: var(--focus, 50% 50%); display: block; }
   .case .body { padding: 22px 24px; }
-  .case .meta { color: var(--gold); font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+  .case .meta { font-family: var(--font-mono); color: var(--gold); font-size: 0.8rem; letter-spacing: 0.06em; margin-bottom: 6px; }
   .case h3 { font-size: 1.1rem; margin-bottom: 8px; }
   .case p { color: var(--muted); font-size: 0.95rem; }
   blockquote {
     margin-top: 28px; border-left: 3px solid var(--gold); padding: 6px 0 6px 20px;
-    color: #dfe5ee; font-size: 1.1rem; max-width: 720px;
+    color: #e8e2d2; font-size: 1.1rem; max-width: 720px;
   }
   blockquote cite { display: block; margin-top: 8px; color: var(--muted); font-size: 0.9rem; font-style: normal; }
 
@@ -257,11 +276,12 @@
   }
   .reel-shade {
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, var(--bg) 0%, rgba(11,13,18,0.35) 28%, rgba(11,13,18,0.6) 62%, var(--bg) 100%);
+    background: linear-gradient(180deg, var(--bg) 0%, rgba(10,10,10,0.35) 28%, rgba(10,10,10,0.6) 62%, var(--bg) 100%);
   }
   .reel .wrap { position: relative; z-index: 1; }
+  .reel h2, .reel .kicker, .reel-sub { text-shadow: 0 1px 14px rgba(0,0,0,0.7); }
   .reel h2 { margin-bottom: 0; }
-  .reel-sub { color: #c9d1dd; max-width: 640px; margin: 16px auto 0; font-size: 1.05rem; }
+  .reel-sub { color: #d8d2c2; max-width: 640px; margin: 16px auto 0; font-size: 1.05rem; }
 
   /* Contact */
   .contact { display: grid; grid-template-columns: 1fr; gap: 36px; }
@@ -275,7 +295,7 @@
   }
   .row2 { display: grid; grid-template-columns: 1fr; gap: 16px; }
   @media (min-width: 560px) { .row2 { grid-template-columns: 1fr 1fr; } }
-  label { display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; }
+  label { display: block; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
   label .opt { color: var(--muted); font-weight: 400; }
   input, select, textarea {
     width: 100%; background: var(--bg); color: var(--text);
@@ -294,9 +314,14 @@
   footer a { color: var(--muted); text-decoration: none; }
   footer a:hover { color: var(--gold-soft); }
 
+  /* Scroll reveal: gated on the js class, so content is visible without JS */
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+
   /* Motion fallback: stills instead of video for reduced-motion users */
   @media (prefers-reduced-motion: reduce) {
     .hero-video, .reel-video { display: none; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
     html { scroll-behavior: auto; }
   }
 </style>
@@ -328,9 +353,10 @@
     <h1>The room and the stream, handled by one engineer.</h1>
     <p class="lede">IDW Entertainment Technology provides audio, video, and livestream production for corporate events, conferences, and live shows across New York and New Jersey. The mix in the room and the feed online come from one plan and one point of contact.</p>
     <div class="btnrow">
-      <a class="btn primary" href="#contact">Request a quote</a>
+      <a class="btn primary" href="#contact">Get a quote</a>
       <a class="btn ghost" href="tel:+13477947663">Call (347) 794-7663</a>
     </div>
+    <div class="creds"><span>AVIXA CTS</span><b>·</b><span>DANTE LEVEL 2</span><b>·</b><span>Q-SYS LEVEL 1</span><b>·</b><span>12+ YEARS IN LIVE PRODUCTION</span></div>
   </div>
 </header>
 
@@ -342,7 +368,7 @@
     <h2>Production services, done right</h2>
     <p class="sectionlede">One call covers your audio, video, crew, and show flow. Every engagement gets documented systems, clean RF, reliable networks, and calm execution under pressure.</p>
 
-    <div class="feature">
+    <div class="feature reveal">
       <h3>Hybrid and livestream production</h3>
       <p>Many event crews treat the stream as an add-on. IDW plans it from the first call, using the broadcast workflows Isaac works with every day in a broadcast facility, so remote viewers get a real show rather than a webcam pointed at a stage.</p>
       <div class="split">
@@ -368,33 +394,33 @@
     </div>
 
     <div class="grid">
-      <div class="card">
-        <div class="icon" aria-hidden="true">🎚️</div>
+      <div class="card reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h9"/><path d="M17 8h3"/><path d="M4 16h3"/><path d="M11 16h9"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="16" r="2"/></svg></div>
         <h3>Live Audio Engineering</h3>
         <p>A1 and FOH mixing for corporate events and live productions. Clean, intelligible sound from load in to last call, on consoles including Yamaha QL series.</p>
       </div>
-      <div class="card">
-        <div class="icon" aria-hidden="true">📺</div>
+      <div class="card reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M10 9.2l4.5 2.8L10 14.8z" fill="currentColor" stroke="none"/><path d="M9 20.5h6"/></svg></div>
         <h3>Video Engineering</h3>
         <p>V1 services: switching, projection, LED walls, and playback for conferences and live shows. Pixel perfect content, cued on time.</p>
       </div>
-      <div class="card">
-        <div class="icon" aria-hidden="true">📋</div>
+      <div class="card reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l1.4 1.4L8 5.8"/><path d="M4 13l1.4 1.4L8 11.8"/><path d="M4 19l1.4 1.4L8 17.8"/><path d="M11 7h9"/><path d="M11 13h9"/><path d="M11 19h9"/></svg></div>
         <h3>Production Management</h3>
         <p>Crew coordination, schedules, and show flow. One point of contact from planning through strike, so nothing falls through the cracks.</p>
       </div>
-      <div class="card">
-        <div class="icon" aria-hidden="true">📡</div>
+      <div class="card reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><path d="M8.8 15.2a4.6 4.6 0 0 1 0-6.4"/><path d="M15.2 8.8a4.6 4.6 0 0 1 0 6.4"/><path d="M6.2 17.8a9 9 0 0 1 0-11.6"/><path d="M17.8 6.2a9 9 0 0 1 0 11.6"/></svg></div>
         <h3>RF Coordination</h3>
         <p>Wireless microphone and IEM coordination using Shure Wireless Workbench. Clean frequencies, managed spectrum, no surprises during the show.</p>
       </div>
-      <div class="card">
-        <div class="icon" aria-hidden="true">🌐</div>
+      <div class="card reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="2.2"/><circle cx="19" cy="6" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M7 11l9.8-4"/><path d="M7 13l9.8 4"/></svg></div>
         <h3>Networked Audio Systems</h3>
         <p>Dante and AES67 administration, VLAN configuration, multicast and IGMP tuning. Reliable audio over IP for installed and temporary systems.</p>
       </div>
-      <div class="card">
-        <div class="icon" aria-hidden="true">🎤</div>
+      <div class="card reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0"/><path d="M12 18v3"/></svg></div>
         <h3>Event Support</h3>
         <p>Day of technical support, rehearsals, and show calling assistance. Extra hands with senior level judgment when your production needs it most.</p>
       </div>
@@ -420,19 +446,19 @@
     <h2>From first call to final file</h2>
     <p class="sectionlede">No surprises for you or the venue. Here is what booking IDW looks like.</p>
     <ol class="steps">
-      <li>
+      <li class="reveal">
         <h3>Send the details</h3>
         <p>Date, venue, headcount, and whether it will be streamed. You get availability and a straightforward quote.</p>
       </li>
-      <li>
+      <li class="reveal">
         <h3>Plan the show</h3>
         <p>A call to walk the run of show, then a documented signal flow, RF plan, and stream plan before load in.</p>
       </li>
-      <li>
+      <li class="reveal">
         <h3>Show day</h3>
         <p>On site from load in, behind the console, with one person to call if anything changes.</p>
       </li>
-      <li>
+      <li class="reveal">
         <h3>Wrap</h3>
         <p>Clean strike, plus recordings and stream files handed off so you can share the event afterward.</p>
       </li>
@@ -456,7 +482,7 @@
         </div>
       </div>
       <div>
-        <img src="assets/canon-stage.jpg" alt="Corporate event stage with red lit truss" loading="lazy" width="1200" height="322">
+        <img src="assets/canon-stage.jpg" alt="Corporate event stage with red lit truss" loading="lazy" width="1200" height="900">
       </div>
     </div>
   </div>
@@ -468,23 +494,23 @@
     <h2>Shows we've run</h2>
     <p class="sectionlede">A few recent productions, and what it took to get them right.</p>
     <div class="cases">
-      <article class="case">
-        <img src="assets/work/case-1.jpg" alt="Corporate conference general session with branded stage screen and blue uplighting, viewed from the FOH tech position" loading="lazy" width="1200" height="1600" style="--focus: 50% 48%">
+      <article class="case reveal">
+        <img src="assets/work/case-1.jpg" alt="Corporate conference general session with branded stage screen and blue uplighting, viewed from the FOH tech position" loading="lazy" width="1200" height="900" style="--focus: 50% 48%">
         <div class="body">
           <div class="meta">Corporate conference, general session</div>
           <h3>Flagship session, run from behind the drape</h3>
           <p>Full-room AV for a corporate flagship: big-screen projection, stage wash, wireless mics, and program playback cued to the show flow, mixed live from the FOH position.</p>
         </div>
       </article>
-      <article class="case">
-        <img src="assets/work/case-2.jpg" alt="Video village for an investor meeting: switching console, multiview monitors, and playback laptops" loading="lazy" width="1200" height="1600" style="--focus: 50% 62%">
+      <article class="case reveal">
+        <img src="assets/work/case-2.jpg" alt="Video village for an investor meeting: switching console, multiview monitors, and playback laptops" loading="lazy" width="1200" height="900" style="--focus: 50% 80%">
         <div class="body">
           <div class="meta">Investor meeting, video village</div>
           <h3>Every feed in one place</h3>
           <p>Switching and playback from video village: a multi-source multiview, presentation laptops, and program routed to the room displays.</p>
         </div>
       </article>
-      <article class="case">
+      <article class="case reveal">
         <img src="assets/work/case-3.jpg" alt="Yamaha QL1 console with PTZ camera controller in a hybrid meeting space" loading="lazy" width="1200" height="900">
         <div class="body">
           <div class="meta">Hybrid meeting space, broadcast audio</div>
@@ -522,7 +548,7 @@
       </div>
 
       <!-- Formspree: create a free form at formspree.io, then replace YOUR_FORM_ID below -->
-      <form class="quote" action="https://formspree.io/f/xjykzzlw" method="POST">
+      <form class="quote reveal" action="https://formspree.io/f/xjykzzlw" method="POST">
         <input type="hidden" name="_subject" value="New event inquiry from idw website">
         <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="row2">
@@ -605,6 +631,21 @@
   } else if (reel) {
     reel.src = reel.dataset.src;
     reel.autoplay = true;
+  }
+
+  // Scroll reveal: fade sections in once as they arrive.
+  var revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length && 'IntersectionObserver' in window && !reduce) {
+    var rio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        rio.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { rio.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
   }
 
   // Send the inquiry without leaving the page.
