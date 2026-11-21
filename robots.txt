@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://idwent.com/sitemap.xml
